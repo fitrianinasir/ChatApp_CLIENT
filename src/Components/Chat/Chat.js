@@ -16,7 +16,9 @@ function Chat(props) {
     setName(name)
     setRoom(room)
     
-    // socket.emit()
+    socket.emit('join', {name, room}, () => {
+      
+    })
 
   }, [ENDPOINT, props.location.search])
   return (
