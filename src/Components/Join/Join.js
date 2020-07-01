@@ -8,8 +8,8 @@ function Join() {
 
   return (
     <div className="joinOuterContainer">
-      <div class="joinInnerContainer">
-        <h1 class="heading">Join</h1>
+      <div className="joinInnerContainer">
+        <h1 className="heading">Join</h1>
         <div>
           <input
             type="text"
@@ -24,13 +24,14 @@ function Join() {
             placeholder="Room"
             className="joinInput mt-20"
             onChange={(e) => setRoom(e.target.value)}
+            onKeyPress={(e)=> e.key === 'Enter' ? window.location.href = `/chat?name=${name}&room=${room}` : null}
           />
         </div>
         <Link
           onClick={(e) => (!name || !room ? e.preventDefault() : null)}
           to={`/chat?name=${name}&room=${room}`}
         >
-          <button type="submit mt-20" class="button">
+          <button type="submit mt-20" className="button">
             Sign In
           </button>
         </Link>
